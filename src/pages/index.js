@@ -29,7 +29,7 @@ export default function Home() {
       <form
         action="POST"
         onSubmit={handleSubmit}
-        className="flex flex-col"
+        className="flex flex-col gap-2"
       >
         <label htmlFor="input">Input: </label>
         <textarea
