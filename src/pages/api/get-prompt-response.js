@@ -9,7 +9,7 @@ export default async function getPromptResponse(req, res) {
     They will give you a description of the photo and information about the feel, vibe and the message they want to convey
     and you will return the caption. Limit the character count to max = 125.
      Description of the photo:${input}`,
-    temperature: 0.7,
+    temperature: 0.3,
     max_tokens: 150,
     top_p: 1,
     frequency_penalty: 0,
