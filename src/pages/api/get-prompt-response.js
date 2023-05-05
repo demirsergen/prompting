@@ -10,7 +10,7 @@ export default async function getPromptResponse(req, res) {
     and you will return the caption. Limit the character count to max = 125.
      Description of the photo:${input}`,
     temperature: 0.3,
-    max_tokens: 150,
+    max_tokens: 250,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
