@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center p-24 gap-4 ${inter.className}`}
+      className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
     >
       <Form sendInput={sendInput} />
       <Response response={response} />

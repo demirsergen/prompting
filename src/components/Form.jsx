@@ -13,15 +13,14 @@ const Form = ({ sendInput }) => {
     <form
       action="POST"
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 bg-gray-700 rounded"
     >
-      <label htmlFor="input">Input: </label>
       <textarea
         type="text"
         id="input"
-        className="bg-gray-100 p-2"
+        className=" p-2 bg-transparent text-white placeholder-white overflow-hidden border-2 border-white"
         value={input}
-        cols={30}
+        cols={40}
         rows={5}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter a photo description..."
@@ -29,7 +28,7 @@ const Form = ({ sendInput }) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-red-100 rounded p-2"
+        className="bg-teal-600 rounded p-2"
       />
     </form>
   );
