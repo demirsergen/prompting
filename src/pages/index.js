@@ -2,15 +2,35 @@ import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Response from '@/components/Response';
 import Form from '@/components/Form';
+import UploadFile from '@/components/UploadFile';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [input, setInput] = useState('');
+  const [file, setFile] = useState('');
   const [response, setResponse] = useState('');
 
-  const sendInput = (input) => {
+  const getInput = (input) => {
     setInput(input);
+  };
+
+  const getFile = (file) => {
+    setFile(file);
+  };
+
+  const getFileText = (file) => {
+    const currentFile = file;
+    let reader = new FileReader();
+
+    reader.onload = (e) => {
+      console.log(e.target.result);
+    };
+
+    reader.readAsText(file);
+
+    // const text = reader.readAsText(file);
+    // console.log(text);
   };
 
   const getCaption = async () => {
@@ -31,12 +51,18 @@ export default function Home() {
     getCaption();
   }, [input]);
 
+  useEffect(() => {
+    console.log(file);
+  }, [file]);
+
   return (
     <main
       className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
     >
-      <Form sendInput={sendInput} />
+      <Form getInput={getInput} />
+      <UploadFile getFile={getFile} />
       <Response response={response} />
+      <button onClick={() => getFileText(file)}>Read</button>
     </main>
   );
 }

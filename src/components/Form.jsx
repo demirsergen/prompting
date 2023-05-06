@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const Form = ({ sendInput }) => {
+const Form = ({ getInput }) => {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    sendInput(input);
+    getInput(input);
   };
 
   return (
