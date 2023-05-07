@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const UploadFile = ({ getFile }) => {
   const [file, setFile] = useState('');
-  const [textValue, setTextValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
