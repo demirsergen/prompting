@@ -5,6 +5,7 @@ const UploadFile = ({ getFile }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert('File uploaded!');
 
     getFile(file);
   };
@@ -14,7 +15,11 @@ const UploadFile = ({ getFile }) => {
         type="file"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <input type="submit" value="Upload" />
+      <input
+        type="submit"
+        value="Upload"
+        className="rounded bg-teal-600 p-1"
+      />
     </form>
   );
 };
