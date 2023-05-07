@@ -13,12 +13,12 @@ const Form = ({ getInput }) => {
     <form
       action="POST"
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 bg-gray-700 rounded"
+      className="flex flex-col gap-2 bg-gray-700 rounded overflow-hidden"
     >
       <textarea
         type="text"
         id="input"
-        className=" p-2 bg-transparent text-white placeholder-white overflow-hidden border-2 border-white"
+        className=" p-2 bg-transparent text-white placeholder-white border-2 border-white"
         value={input}
         cols={40}
         rows={5}
