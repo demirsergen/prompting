@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   const [input, setInput] = useState('');
   const [file, setFile] = useState('');
+  const [fileText, setFileText] = useState('');
   const [response, setResponse] = useState('');
 
   const getInput = (input) => {
@@ -19,18 +20,10 @@ export default function Home() {
     setFile(file);
   };
 
-  const getFileText = (file) => {
-    const currentFile = file;
-    let reader = new FileReader();
+  const getFileText = async (file) => {
+    const text = await file.text();
 
-    reader.onload = (e) => {
-      console.log(e.target.result);
-    };
-
-    reader.readAsText(file);
-
-    // const text = reader.readAsText(file);
-    // console.log(text);
+    setFileText(text);
   };
 
   const getCaption = async () => {
@@ -51,10 +44,6 @@ export default function Home() {
     getCaption();
   }, [input]);
 
-  useEffect(() => {
-    console.log(file);
-  }, [file]);
-
   return (
     <main
       className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
@@ -63,6 +52,7 @@ export default function Home() {
       <UploadFile getFile={getFile} />
       <Response response={response} />
       <button onClick={() => getFileText(file)}>Read</button>
+      <p>{fileText}</p>
     </main>
   );
 }
