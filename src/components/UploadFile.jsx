@@ -18,7 +18,7 @@ const UploadFile = ({ getFile }) => {
       <input
         type="submit"
         value="Upload"
-        className="rounded bg-teal-600 p-1"
+        className="rounded bg-teal-600 py-1 px-2"
       />
     </form>
   );

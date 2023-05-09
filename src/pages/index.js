@@ -20,11 +20,7 @@ export default function Home() {
     setFile(file);
   };
 
-  const getFileText = async (file) => {
-    const text = await file.text();
-
-    setFileText(text);
-  };
+  const getFileText = async (file) => {};
 
   const getCaption = async () => {
     if (input) {
@@ -51,8 +47,13 @@ export default function Home() {
       <Form getInput={getInput} />
       <UploadFile getFile={getFile} />
       <Response response={response} />
-      <button onClick={() => getFileText(file)}>Read</button>
-      <p>{fileText}</p>
+      <button
+        onClick={() => getFileText(file)}
+        className="py-1 px-2 bg-teal-600 rounded"
+      >
+        Read
+      </button>
+      {fileText && <p>{fileText}</p>}
     </main>
   );
 }
