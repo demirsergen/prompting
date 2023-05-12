@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Response from '@/components/Response';
 import Form from '@/components/Form';
+import ToneButtons from '@/components/ToneButtons';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,6 +36,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
     >
+      <ToneButtons />
       <Form getInput={getInput} />
       <Response response={response} />
     </main>
