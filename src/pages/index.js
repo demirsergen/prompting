@@ -11,6 +11,17 @@ export const AppContext = createContext();
 export default function Home() {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
+  const [selectedTones, setSelectedTones] = useState({
+    professional: false,
+    casual: false,
+    friendly: false,
+  });
+
+  // PASS NECESSARY FUNCTIONS AND VALUES VIA CONTEXT
+
+  const handleToneChange = (tone) => {
+    alert(tone);
+  };
 
   const getInput = (input) => {
     setInput(input);
