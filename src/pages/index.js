@@ -19,10 +19,6 @@ export default function Home() {
 
   // PASS NECESSARY FUNCTIONS AND VALUES VIA CONTEXT
 
-  const handleToneChange = (tone) => {
-    alert(tone);
-  };
-
   const getInput = (input) => {
     setInput(input);
   };
@@ -46,7 +42,7 @@ export default function Home() {
   }, [input]);
 
   return (
-    <AppContext.Provider value={{}}>
+    <AppContext.Provider value={{ setSelectedTones }}>
       <main
         className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
       >
