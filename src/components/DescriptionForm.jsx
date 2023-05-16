@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-const Form = ({ getInput }) => {
-  const [input, setInput] = useState('');
+const DescriptionForm = ({ getDescription }) => {
+  const [description, setDescription] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    getInput(input);
-    setInput('');
+    getDescription(description);
+    setDescription('');
   };
 
   return (
@@ -18,12 +18,12 @@ const Form = ({ getInput }) => {
     >
       <textarea
         type="text"
-        id="input"
+        id="description"
         className=" p-2 bg-transparent text-white placeholder-white border-2 border-white"
-        value={input}
+        value={description}
         cols={40}
         rows={5}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => setDescription(e.target.value)}
         placeholder="Enter a photo description..."
       />
       <input
@@ -35,4 +35,4 @@ const Form = ({ getInput }) => {
   );
 };
 
-export default Form;
+export default DescriptionForm;
