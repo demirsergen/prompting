@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import { useEffect, useState, createContext } from 'react';
 import Response from '@/components/Response';
-import Form from '@/components/Form';
+import Form from '@/components/DescriptionForm';
 import ToneSelector from '@/components/ToneSelector';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -9,14 +9,14 @@ const inter = Inter({ subsets: ['latin'] });
 export const AppContext = createContext();
 
 export default function Home() {
-  const [input, setInput] = useState('');
+  const [description, setDescription] = useState('');
   const [tone, setTone] = useState('');
   const [response, setResponse] = useState('');
 
   // make a select component for 'tone'. we should only be able to choose one tone at a time.
 
-  const getInput = (input) => {
-    setInput(input);
+  const getDescription = (description) => {
+    setDescription(description);
   };
 
   const getTone = (tone) => {
@@ -24,13 +24,13 @@ export default function Home() {
   };
 
   const getCaption = async () => {
-    if (input) {
+    if (description) {
       const response = await fetch('/api/get-prompt-response', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ input, tone }),
+        body: JSON.stringify({ description, tone }),
       });
       const { result } = await response.json();
       setResponse(result);
@@ -39,7 +39,7 @@ export default function Home() {
 
   useEffect(() => {
     getCaption();
-  }, [input]);
+  }, [description]);
 
   return (
     <AppContext.Provider value={{}}>
@@ -47,7 +47,7 @@ export default function Home() {
         className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
       >
         <ToneSelector getTone={getTone} />
-        <Form getInput={getInput} />
+        <Form getDescription={getDescription} />
         <Response response={response} />
       </main>
     </AppContext.Provider>
