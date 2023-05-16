@@ -7,6 +7,7 @@ const Form = ({ getInput }) => {
     e.preventDefault();
 
     getInput(input);
+    setInput('');
   };
 
   return (
