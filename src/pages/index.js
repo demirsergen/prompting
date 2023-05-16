@@ -17,7 +17,7 @@ export default function Home() {
     friendly: false,
   });
 
-  // PASS NECESSARY FUNCTIONS AND VALUES VIA CONTEXT
+  // make a select component for 'tone'. we should only be able to choose one tone at a time.
 
   const getInput = (input) => {
     setInput(input);
