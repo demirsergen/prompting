@@ -1,4 +1,4 @@
-const targetAudienceOptions = [
+export const targetAudienceOptions = [
   { name: 'Teens', category: 'Age' },
   { name: 'Young adults', category: 'Age' },
   { name: 'Adults', category: 'Age' },

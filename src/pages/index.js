@@ -3,6 +3,7 @@ import { useEffect, useState, createContext } from 'react';
 import Response from '@/components/Response';
 import Form from '@/components/DescriptionForm';
 import ToneSelector from '@/components/ToneSelector';
+import TargetSelector from '@/components/TargetSelector';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -47,6 +48,7 @@ export default function Home() {
         className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
       >
         <ToneSelector getTone={getTone} />
+        <TargetSelector />
         <Form getDescription={getDescription} />
         <Response response={response} />
       </main>
