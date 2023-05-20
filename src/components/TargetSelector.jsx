@@ -21,7 +21,7 @@ const TargetSelector = ({ getTargetAudience }) => {
       </option>
       {targetAudienceOptions.map((audience, i) => (
         // console.log(audience);
-        <option key={i} value={audience.name}>
+        <option key={i} value={audience.category}>
           {audience.name}
         </option>
       ))}
