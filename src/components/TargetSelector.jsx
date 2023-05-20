@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { targetAudienceOptions } from '../../targetAudiences';
 
-const TargetSelector = () => {
+const TargetSelector = ({ getTargetAudience }) => {
   const [selectedTarget, setSelectedTarget] = useState('');
 
   const handleChangeTarget = (e) => {
-    setSelectedTarget(e.target.value);
+    const target = e.target.value;
+
+    setSelectedTarget(target);
+    getTargetAudience(target);
   };
   return (
     <select

@@ -12,6 +12,7 @@ export const AppContext = createContext();
 export default function Home() {
   const [description, setDescription] = useState('');
   const [tone, setTone] = useState('');
+  const [targetAudience, setTargetAudience] = useState('');
   const [response, setResponse] = useState('');
 
   // make a select component for 'tone'. we should only be able to choose one tone at a time.
@@ -24,6 +25,10 @@ export default function Home() {
     setTone(tone);
   };
 
+  const getTargetAudience = (target) => {
+    setTargetAudience(target);
+  };
+
   const getCaption = async () => {
     if (description) {
       const response = await fetch('/api/get-prompt-response', {
@@ -31,7 +36,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ description, tone }),
+        body: JSON.stringify({ description, tone, targetAudience }),
       });
       const { result } = await response.json();
       setResponse(result);
@@ -48,7 +53,7 @@ export default function Home() {
         className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
       >
         <ToneSelector getTone={getTone} />
-        <TargetSelector />
+        <TargetSelector getTargetAudience={getTargetAudience} />
         <Form getDescription={getDescription} />
         <Response response={response} />
       </main>
