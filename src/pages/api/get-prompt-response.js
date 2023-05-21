@@ -7,7 +7,10 @@ export default async function getPromptResponse(req, res) {
     model: 'text-davinci-003',
     prompt: `You are helping people write better captions for their Instagram posts. 
     They will give you a description of the photo and information about the feel, vibe
-    and you will return the caption. Limit the character count to max = 125.
+    and you will return the caption. Make sure the caption makes sense with the description.
+    In a new line, explain your choice of caption for that specific desription. 
+    
+    Limit the character count to max = 125.
     Description of the photo:${input}. The tone of the caption:${tone}. The target audience:${targetAudience}`,
     temperature: 1,
     max_tokens: 250,
