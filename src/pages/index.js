@@ -15,8 +15,6 @@ export default function Home() {
   const [targetAudience, setTargetAudience] = useState('');
   const [response, setResponse] = useState('');
 
-  // make a select component for 'tone'. we should only be able to choose one tone at a time.
-
   const getDescription = (description) => {
     setDescription(description);
   };
