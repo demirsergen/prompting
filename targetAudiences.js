@@ -8,31 +8,31 @@ export const targetAudienceOptions = [
   { name: 'Female', category: 'Gender' },
   { name: 'Non-binary', category: 'Gender' },
   {
-    name: 'Fitness and wellness enthusiasts',
+    name: 'Fitness and wellness',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Food and cooking enthusiasts',
+    name: 'Food and cooking',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Travel and adventure seekers',
+    name: 'Travel and adventure',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Fashion and beauty enthusiasts',
+    name: 'Fashion and beauty',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Technology and gaming enthusiasts',
+    name: 'Technology and gaming',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Music and entertainment lovers',
+    name: 'Music and entertainment',
     category: 'Interests/Hobbies',
   },
   {
-    name: 'Art and culture enthusiasts',
+    name: 'Art and culture',
     category: 'Interests/Hobbies',
   },
   {
@@ -53,8 +53,6 @@ export const targetAudienceOptions = [
   { name: 'Students', category: 'Demographics' },
   { name: 'Working professionals', category: 'Demographics' },
   { name: 'Parents and caregivers', category: 'Demographics' },
-  { name: 'Retirees', category: 'Demographics' },
-  { name: 'Local community', category: 'Geographic Location' },
   { name: 'National audience', category: 'Geographic Location' },
   { name: 'International audience', category: 'Geographic Location' },
   { name: 'English speakers', category: 'Language' },
@@ -64,21 +62,5 @@ export const targetAudienceOptions = [
   { name: 'Pet lovers', category: 'Niche Communities' },
   { name: 'Bookworms', category: 'Niche Communities' },
   { name: 'Gamers', category: 'Niche Communities' },
-  {
-    name: 'Health-conscious individuals',
-    category: 'Psychographic Traits',
-  },
-  {
-    name: 'Socially conscious individuals',
-    category: 'Psychographic Traits',
-  },
-  {
-    name: 'Tech-savvy individuals',
-    category: 'Psychographic Traits',
-  },
-  {
-    name: 'Creatively inclined individuals',
-    category: 'Psychographic Traits',
-  },
   { name: 'All', category: 'All' },
 ];
