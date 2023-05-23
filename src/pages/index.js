@@ -14,9 +14,9 @@ export default function Home() {
   const [tone, setTone] = useState('');
   const [targetAudience, setTargetAudience] = useState('');
   const [response, setResponse] = useState('');
-  
+
   // figure out a way to clean selections after submit
-// maybe move state up and pass down via context
+  // maybe move state up and pass down via context
 
   const getDescription = (description) => {
     setDescription(description);
@@ -53,8 +53,11 @@ export default function Home() {
       <main
         className={`flex min-h-screen flex-col bg-gray-700 text-white items-center p-24 gap-4 ${inter.className}`}
       >
-        <ToneSelector getTone={getTone} />
-        <TargetSelector getTargetAudience={getTargetAudience} />
+        <div className="flex gap-2 ">
+          <ToneSelector getTone={getTone} />
+          <TargetSelector getTargetAudience={getTargetAudience} />
+        </div>
+
         <Form getDescription={getDescription} />
         <Response response={response} />
       </main>
