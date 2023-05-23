@@ -12,7 +12,7 @@ const ToneSelector = ({ getTone }) => {
     <select
       value={selectedTone}
       onChange={handleToneChange}
-      className=" text-black"
+      className=" text-black p-1 rounded"
     >
       <option value="Select...">Select a tone</option>
       <option value="professional">Professional</option>
