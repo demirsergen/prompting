@@ -14,7 +14,7 @@ const TargetSelector = ({ getTargetAudience }) => {
     <select
       onChange={handleChangeTarget}
       value={selectedTarget}
-      className="text-black"
+      className="text-black p-1 rounded"
     >
       <option value="" defaultValue>
         Select a target audience
