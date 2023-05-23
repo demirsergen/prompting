@@ -14,6 +14,9 @@ export default function Home() {
   const [tone, setTone] = useState('');
   const [targetAudience, setTargetAudience] = useState('');
   const [response, setResponse] = useState('');
+  
+  // figure out a way to clean selections after submit
+// maybe move state up and pass down via context
 
   const getDescription = (description) => {
     setDescription(description);
