@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className=" bg-gray-900 text-white  p-4 w-full">
       <div className="flex justify-between mx-auto w-2/3">
-        <h2>Captioneer</h2>
+        <Link href="/">Captioneer</Link>
         <ul>
           <li>
             <Link href="/profile">Profile</Link>
