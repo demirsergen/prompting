@@ -5,15 +5,10 @@ export default async function getPromptResponse(req, res) {
 
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `You are helping people write better captions for their Instagram posts. 
-    They will give you a description of the photo and you will return the caption.
-    Concentrate on the description, the target audience is the second important factor.
-    Make sure the caption makes sense with the description.
-    In a new line, explain your choice of caption for that specific desription. 
-    
-    Limit the character count to max = 125.
-    Description of the photo:${input}. The tone of the caption:${tone}. The target audience:${targetAudience}`,
-    temperature: 1,
+    prompt: `You are helping people write better threads on Twitter. Each tweet in a thread cannot exceed 200 characters.
+    The user will give you a topic and you will return the tweets with for that thread with that topic.
+    Main topic of the thread:${input}. The tone of the caption:${tone}. The target audience:${targetAudience}`,
+    temperature: 0.5,
     max_tokens: 250,
     top_p: 1,
     frequency_penalty: 0,
